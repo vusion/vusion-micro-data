@@ -4,7 +4,13 @@
     "module": "es6",
     "esModuleInterop": true,
     "lib": ["es7", "dom"],
-    "outDir": "./dist/"
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "outDir": "dist/lib",
+    "moduleResolution": "node",
+    "typeRoots": [
+      "node_modules/@types"
+    ]
   },
   "include": [
     "./src"

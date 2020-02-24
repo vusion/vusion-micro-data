@@ -2,14 +2,16 @@
   "name": "vusion-micro-data",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/lib/index.js",
+  "module": "dist/lib/index.js",
+  "typings": "dist/types/index.d.ts",
   "scripts": {
     "test": "jest",
     "watch": "npm t -- --watch",
     "coverage": "jest --coverage",
     "lint": "eslint src --fix --ext .ts",
-    "build": "npx webpack --mode=production",
-    "dev": "npx webpack-dev-server --mode=development"
+    "lib": "tsc",
+    "dev": "tsc -w"
   },
   "keywords": [],
   "author": "zhangsanshi5566@gmail.com",
