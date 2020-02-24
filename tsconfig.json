@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es6",
+    "esModuleInterop": true,
+    "lib": ["es7", "dom"],
+    "outDir": "./dist/"
+  },
+  "include": [
+    "./src"
+  ]
+}
