@@ -61,8 +61,8 @@ export const clearTopic = function(topic: string, isSaveData?: boolean): void {
     const current = topics[topic];
     if (current) {
         current.queue.length = 0;
-    }
-    if (!isSaveData) {
-        current.last = empty;
+        if (!isSaveData) {
+            current.last = empty;
+        }
     }
 };

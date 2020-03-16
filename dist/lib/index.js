@@ -57,8 +57,8 @@ export var clearTopic = function (topic, isSaveData) {
     var current = topics[topic];
     if (current) {
         current.queue.length = 0;
-    }
-    if (!isSaveData) {
-        current.last = empty;
+        if (!isSaveData) {
+            current.last = empty;
+        }
     }
 };
