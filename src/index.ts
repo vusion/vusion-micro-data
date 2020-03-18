@@ -4,17 +4,21 @@ declare global {
         __MICROAPP__: boolean;
     }
 }
-const g = function (): Window{
-    if (window.__MICROAPP__) {
-        return window.$root || window;
-    }
-    return window;
-}();
+
 const empty = Symbol('vusion-micro-data-empty');
 const key = Symbol.for('vusion-micro-data');
-const topics = g[key] = g[key] || {};
+let topics;
 
 const initTopic = function (topic: string): void {
+    if (!topics) {
+        const g = function (): Window{
+            if (window.__MICROAPP__) {
+                return window.$root || window;
+            }
+            return window;
+        }();
+        topics = g[key] = g[key] || {};
+    }
     if (!topics[topic]) {
         topics[topic] = {
             queue: [],

@@ -1,13 +1,16 @@
-var g = function () {
-    if (window.__MICROAPP__) {
-        return window.$root || window;
-    }
-    return window;
-}();
 var empty = Symbol('vusion-micro-data-empty');
 var key = Symbol.for('vusion-micro-data');
-var topics = g[key] = g[key] || {};
+var topics;
 var initTopic = function (topic) {
+    if (!topics) {
+        var g = function () {
+            if (window.__MICROAPP__) {
+                return window.$root || window;
+            }
+            return window;
+        }();
+        topics = g[key] = g[key] || {};
+    }
     if (!topics[topic]) {
         topics[topic] = {
             queue: [],
