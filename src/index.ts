@@ -5,7 +5,7 @@ declare global {
     }
 }
 
-const empty = Symbol('vusion-micro-data-empty');
+const empty = Symbol.for('vusion-micro-data-empty');
 const key = Symbol.for('vusion-micro-data');
 let topics;
 

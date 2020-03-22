@@ -1,4 +1,4 @@
-var empty = Symbol('vusion-micro-data-empty');
+var empty = Symbol.for('vusion-micro-data-empty');
 var key = Symbol.for('vusion-micro-data');
 var topics;
 var initTopic = function (topic) {
