@@ -56,7 +56,11 @@ export var publish = function (topic, data) {
         current.last = empty;
     };
 };
-export var clearTopic = function (topic, isSaveData) {
+export var clearTopic = function (topic) {
+    var current = topics[topic];
+    current.last = empty;
+};
+export var resetTopic = function (topic, isSaveData) {
     var current = topics[topic];
     if (current) {
         current.queue.length = 0;
