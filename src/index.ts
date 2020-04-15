@@ -61,7 +61,11 @@ export const publish = function (topic: string, data: any): Function {
         current.last = empty;
     };
 };
-export const clearTopic = function(topic: string, isSaveData?: boolean): void {
+export const clearTopic = function(topic: string): void {
+    const current = topics[topic];
+    current.last = empty;
+};
+export const resetTopic = function(topic: string, isSaveData?: boolean): void {
     const current = topics[topic];
     if (current) {
         current.queue.length = 0;

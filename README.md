@@ -40,12 +40,22 @@ const cancel = subscribe('test', (data) => {
 cancel();
 ```
 
-### clearTopic
+### resetTopic
 
-clear topic queue and data
+reset topic queue and data
 
 `function (topic: string, isSaveData?: boolean): void`
 
 ```javascript
-clearTopic('test', false);
+resetTopic('test', false);
+```
+
+### clearTopic
+
+clear topic data
+
+`function (topic: string): void`
+
+```javascript
+clearTopic('test');
 ```
